@@ -1,9 +1,11 @@
-const APP_VERSION='1.2';
-const MIGRATION_KEY='kbpflow_migrated_v12';
-if(localStorage.getItem(MIGRATION_KEY)!=='yes'){
-  localStorage.removeItem('kbpflow');
-  localStorage.setItem(MIGRATION_KEY,'yes');
+const V13_MIGRATION='kbpflow_clean_v13';
+if(localStorage.getItem(V13_MIGRATION)!=='done'){
+  // V1.3 clean start: remove all KBP Flow app data left by demo/older versions.
+  localStorage.clear();
+  localStorage.setItem(V13_MIGRATION,'done');
 }
+
+const APP_VERSION='1.3';
 const empty={income:0,savings:0,bills:0,transactions:[],budgets:[['Logement',0,0],['Alimentation',0,0],['Transport',0,0],['Restaurants',0,0],['Loisirs',0,0]],goals:[],setupDone:false};
 const old=JSON.parse(localStorage.getItem('kbpflow')||'null');
 let state=old||JSON.parse(JSON.stringify(empty));let current='home';

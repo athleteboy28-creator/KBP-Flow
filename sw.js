@@ -1,4 +1,4 @@
-const C='kbp-flow-v12';
+const C='kbp-flow-v13';
 const ASSETS=['./','index.html','style.css','app.js','manifest.json'];
 
 self.addEventListener('install',e=>{
